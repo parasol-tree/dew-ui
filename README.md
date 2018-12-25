@@ -26,3 +26,7 @@ disabled: Boolean
 nativeType(原生的type, 默认为button)
 
 ```
+```
+[docs](https://github.com/parasol-tree/dew-ui).
+```
+
