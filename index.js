@@ -1,4 +1,5 @@
 import DewButton from './packages/button/index.js'
+import DewIcon from './packages/icon/index.js'
 
 const install = function (Vue, opts = {}) {}
 
@@ -7,5 +8,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export {
-  DewButton
+  DewButton,
+  DewIcon
 }
