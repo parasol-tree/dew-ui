@@ -2,7 +2,7 @@
 A high quality UI components Library with Vue.js
 
 ```
-version beta
+beta version
 please do not download
 测试版本, 请不要下载
 
@@ -62,6 +62,6 @@ digital (eg: 23)
 ```
 
 ```
-[docs](https://github.com/parasol-tree/dew-ui).
+[docs for dew-ui](https://github.com/parasol-tree/dew-ui/blob/master/README.md).
 ```
 
