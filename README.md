@@ -62,6 +62,6 @@ digital (eg: 23)
 ```
 
 ```
-[文档 (docs)](https://github.com/parasol-tree/dew-ui).
+[docs](https://github.com/parasol-tree/dew-ui).
 ```
 
