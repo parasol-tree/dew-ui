@@ -60,8 +60,5 @@ disabled: Boolean 或者 disabled
 digital (eg: 23)
 
 ```
-
-```
 [docs for dew-ui](https://github.com/parasol-tree/dew-ui/blob/master/README.md).
-```
 
