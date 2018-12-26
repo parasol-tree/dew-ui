@@ -11,7 +11,7 @@ please do not download
   button 组件 不能附带 icon, icon 功能 正在开发中...
   icon 组件 没有 icon 功能, 正在开发中...
   目前只有我一个人 在开发与维护, 利用的 是 下班之后的时间 在开发, 进度略慢, 开发完成我会在 issue 内 说明
-
+```
 ## Build Setup
 
 ``` bash
@@ -22,16 +22,26 @@ yarn add dew-ui
 ```
 
 ## 用法 (usage):
+完整引入列表, 只支持 按需引入 (css 集成在 各自的组建内, 不需要单独引入 组件 css 文件)
+```SPA
+<template>
+  <dew-button
+    disabled
+    native-type="button"
+    type="warning"
+  >Warning</dew-button>
+</template>
+<script>
 import Vue from 'vue'
 import { DewButton } from 'dew-ui'
+
 Vue.use(DewButton)
 
-<dew-button
-  disabled
-  native-type="button"
-  type="warning"
->Warning</dew-button>
+export default {}
+</script>
+```
 
+```
 # DewButton
 属性 type
 [default, primary, dashed, text, info, success, warning, error ]
@@ -42,25 +52,16 @@ disabled: Boolean 或者 disabled
 属性 nativeType (设置 button 原生的 type)
 [button, submit, reset]
 
-# DewButton
+# DewIcon
 属性 color
 [HEX RGB RGBA HSL HSLA word(eg: red, skyblue)]
 
 属性 font-size
 digital (eg: 23)
 
-# 完整引入列表, 只支持 按需引入 (css 集成在 各自的组建内, 不需要单独引入 组件 css 文件)
-import {
-  DewButton,
-  DewIcon
-} from 'dew-ui'
-
-Vue.use(DewButton)
-Vue.use(DewIcon)
-
 ```
 
 ```
-[docs](https://github.com/parasol-tree/dew-ui).
+[文档 (docs)](https://github.com/parasol-tree/dew-ui).
 ```
 
