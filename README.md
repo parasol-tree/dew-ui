@@ -23,7 +23,16 @@ yarn add dew-ui
 
 ## 用法 (usage):
 完整引入列表, 只支持 按需引入 (css 集成在 各自的组建内, 不需要单独引入 组件 css 文件)
-```SPA
+
+```
+import {
+  DewButton,
+  DewIcon
+} from 'dew-ui'
+```
+
+SPA(DEMO)
+```
 <template>
   <dew-button
     disabled
@@ -43,22 +52,20 @@ export default {}
 
 ```
 # DewButton
-属性 type
+属性 type (eg: type="primary")
 [default, primary, dashed, text, info, success, warning, error ]
 
-属性 disabled 是否禁用按钮
+属性 disabled 是否禁用按钮 (eg: :disabled="disabled", disabled)
 disabled: Boolean 或者 disabled
 
-属性 nativeType (设置 button 原生的 type)
+属性 nativeType (设置 button 原生的 type, 仅支持以下三种; eg: nativeType="reset")
 [button, submit, reset]
 
 # DewIcon
 属性 color
-[HEX RGB RGBA HSL HSLA word(eg: red, skyblue)]
+[HEX RGB RGBA HSL HSLA word(eg: color="red",  color="#333")]
 
 属性 font-size
-digital (eg: 23)
-
+digital (eg: size="23" 相当于设置了 font-size: 23px;)
 ```
-[docs for dew-ui](https://github.com/parasol-tree/dew-ui/blob/master/README.md).
-
+[docs for dew-ui](http://www.dew-ui.com/).
