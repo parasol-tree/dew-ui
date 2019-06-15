@@ -52,7 +52,7 @@ export default {
     // 距离顶部多高时显示 返回顶部的 按钮, 默认 400 px
     height: {
       type: Number,
-      default: 400
+      default: 0
     }
     //
   },
@@ -97,7 +97,7 @@ export default {
     // 是否显示返回顶部(是否显示按钮), 距离顶部多高时显示 返回顶部的 按钮, 默认 400 px
     isBackTopFn () {
       // 如果没有传入 参数 height, 那么 就在 pageYOffset > 0 时显示 按钮, 否则 >= height 时 显示按钮
-      this.height === 400 ? this.isBackTop = window.pageYOffset > 0 : this.isBackTop = window.pageYOffset >= this.height
+      this.height === 0 ? this.isBackTop = window.pageYOffset > 0 : this.isBackTop = window.pageYOffset >= this.height
     },
     handleBtnBackTopClick () {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop

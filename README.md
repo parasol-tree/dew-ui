@@ -73,11 +73,11 @@ iconCategory  自定义 class 名                                               
   <dew-back-top></<dew-back-top>
   <dew-back-top>返回顶部</<dew-back-top>
 # DewBackTop props
-属性      说明                                    类型      默认值
-height    页面滚动高度达到该值时才显示BackTop组件    Number     400
-bottom    组件距离底部的距离                       Number     30
-right     组件距离右部的距离                       Number     30
-duration  滚动动画持续时间，单位 毫秒               Number     1000
+属性      说明                                                          类型      默认值
+height    页面滚动高度 >= 该值时显示BackTop组件(height = 0 不显示按钮)     Number     0
+bottom    组件距离底部的距离                                             Number     30
+right     组件距离右部的距离                                             Number     30
+duration  滚动动画持续时间，单位 毫秒                                     Number     1000
 
 # DewBackTop events
 事件名     说明                                      返回值       默认值
