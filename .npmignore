@@ -9,4 +9,12 @@
 .wafpickle-*
 config.gypi
 CVS
-npm-debug.log
+*.log
+*.zip
+*.rar
+.cache/
+.settings
+.classpath
+.project
+.idea
+.vscode

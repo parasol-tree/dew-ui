@@ -5,79 +5,45 @@
     :class="[
       type ? 'dew-btn--' + type : '',
       {
-        'is-disabled': disabled,
-        'is-circle': circle
+        'is-disabled': disabled
       }
     ]"
   >
-    <dew-icon
-      :iconCategory="iconCategory"
-      color="#000"
-    >
-    </dew-icon>
-    <span v-if="showSlot" ref="slot">
-      <slot></slot>
-    </span>
+    <slot></slot>
   </button>
 </template>
 
 <script>
-import DewIcon from '../../icon/index.js'
-
-// 判断参数是否是其中之一
-function oneOf (value, validList) {
-  for (let i = 0; i < validList.length; i++) {
-    if (value === validList[i]) {
-      return true
-    }
-  }
-  return false
-}
 export default {
   name: 'DewButton',
-  components: { DewIcon }, // dew-icon
   props: {
     // 是否禁用按钮
     disabled: Boolean,
     // 自定义 按钮 类型 [default, primary, dashed, text, info, success, warning, error ]
     type: {
-      validator (value) {
-        return oneOf(value, ['default', 'primary', 'dashed', 'text', 'info', 'success', 'warning', 'error'])
-      },
+      type: String,
       default: 'default'
     },
     // 原生 的 type 属性
     nativeType: {
       type: String,
       default: 'button'
-    },
-    // 是否圆形按钮
-    circle: Boolean,
-    iconCategory: {
-      type: String,
-      default: ''
     }
-  },
-  data () {
-    return {
-      showSlot: true
-    }
-  },
-  mounted () {
-    // 子元素数组 this.$slots.default
-    this.showSlot = this.$slots.default !== undefined
-    // console.log(this.$slots.default, 'this.$slots.default')
-    // console.log(this.iconCategory, 'iconCategory')
   }
 }
 </script>
 
 <style scoped>
+  button {
+    margin: 0;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    box-sizing: border-box;
+  }
   /* 基本按钮 */
   .dew-btn {
-    margin: 0;
-    font-family: inherit;
-    box-sizing: border-box;
     padding: 5px 15px 6px;
     border: 1px solid #dcdee2;
     border-radius: 4px;
@@ -97,9 +63,6 @@ export default {
     user-select: none;
     /* 让 颜色 的 展示与隐藏有动画效果 */
     transition: color .2s linear, background-color .2s linear,border .2s linear, box-shadow .2s linear;
-  }
-  .dew-btn>span {
-    vertical-align: middle;
   }
 /*   .dew-btn:not([disabled]):hover {
     text-decoration: none;
@@ -187,24 +150,13 @@ export default {
     background-color: #f16643;
   }
   /* 是否禁用按钮 */
-  .dew-btn.is-disabled {
-    border-color: #dcdee2;
-    color: #c5c8ce;
-    background-color: #f7f7f7;
-    background-image: none;
-    cursor: not-allowed;
+  .is-disabled {
+    border-color: #dcdee2!important;
+    color: #c5c8ce!important;
+    background-color: #f7f7f7!important;
+    background-image: none!important;
+    cursor: not-allowed!important;
   }
-  /* .dew-btn.is-circle {
-    border-radius: 32px;
-  }
-  .dew-btn.dew-btn-icon-only {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    border-radius: 50%;
-    font-size: 16px;
-  } */
-  /* 禁用按钮 去除所有文本修饰 */
   button[type="button"]:disabled:hover {
     text-decoration: none;
   }
