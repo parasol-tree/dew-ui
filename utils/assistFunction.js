@@ -37,16 +37,19 @@ export function animationBackTopFn (el, from = 0, to, duration = 500, endCallbac
 export function typeOf(obj) {
   const toString = Object.prototype.toString
   const map = {
-    '[object Boolean]': 'boolean',
-    '[object Number]': 'number',
-    '[object String]': 'string',
-    '[object Function]': 'function',
-    '[object Array]': 'array',
     '[object Date]': 'date',
-    '[object RegExp]': 'regExp',
-    '[object Undefined]': 'undefined',
     '[object Null]': 'null',
-    '[object Object]': 'object'
+    '[object Array]': 'array',
+    '[object Number]': 'number',
+    '[object Object]': 'object',
+    '[object RegExp]': 'regExp',
+    '[object String]': 'string',
+    '[object Boolean]': 'boolean',
+    '[object Function]': 'function',
+    '[object Undefined]': 'undefined',
+    '[object HTMLCollection]': 'htmlCollection',
+    '[object HTMLDivElement]': 'div',
+    '[object HTMLSpanElement]': 'span'
   }
   return map[toString.call(obj)]
 }
@@ -89,4 +92,28 @@ export function passiveSupportedFn () {
     console.error(err, "err 校验 浏览器 的 addEventListener 是否支持 passive 属性时出错 , Error while check for the 'passive' of addEventListener option")
   }
   return passiveSupported
+}
+
+// 判断 参数 是否是 valueList 的 其中之一
+export function oneOfFn (value, valueList) {
+  if (typeOf(valueList) !== 'array') {
+    throw new Error('函数 typeOf 的第二个参数 数据类型必须是 数组')
+  }
+  for (let i = 0, l =  valueList.length; i < l; i++) {
+    if (value === valueList[i]) {
+      return true
+    }
+  }
+  return false
+}
+
+// 获取非行内元素的样式
+export function getCssStyleFn (obj, attr) {
+  if (!obj) {
+    throw new Error('函数 getCssStyleFn 第一个参数不能为空, The function getCssStyleFn The first argument cannot be empty')
+  }
+  if (typeOf(attr) !== 'string' && !attr) {
+    throw new Error('函数 getCssStyleFn 第二个参数类型必须是 string, The function getCssStyleFn The second parameter type must be string')
+  }
+  return window.getComputedStyle ? window.getComputedStyle(obj, null)[attr] : obj.currentStyle[attr]
 }

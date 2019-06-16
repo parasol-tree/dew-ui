@@ -40,7 +40,7 @@ Vue.use(DewIcon)
 Vue.use(DewBackTop)
 ```
 # API
-## DewButton
+## DewButton(button, 按钮)
 ```
   <dew-button
     disabled
@@ -56,7 +56,7 @@ disabled      是否禁用按钮                                                
 nativeType    button 原生属性 type, 仅支持三种 [button, submit, reset]                          String       button
 ```
 
-## DewIcon
+## DewIcon(icon, 矢量图标)
 ```
   组件 不能附带 icon, DewIcon 组件 正在开发中...
   <dew-icon></dew-icon>
@@ -64,24 +64,36 @@ nativeType    button 原生属性 type, 仅支持三种 [button, submit, reset] 
 属性          说明                                                                            类型              默认值
 color         字体颜色 支持类型 [HEX RGB RGBA HSL HSLA word(eg: color="red",  color="#333")]    String            无
 size          字体大小 (eg: size="23" 相当于设置了 font-size: 23px;)                             Number, String    无
-iconCategory  自定义 class 名                                                                   String            ''
+iconCategory  自定义 class 名                                                                  String            ''
 ```
 
-## DewBackTop
+## DewBackTop(返回顶部)
 ```
   DewIcon 组件正在开发中, 所以目前不支持 slot 的 icon 的用法
   <dew-back-top></<dew-back-top>
   <dew-back-top>返回顶部</<dew-back-top>
 # DewBackTop props
 属性      说明                                                          类型      默认值
-height    页面滚动高度 >= 该值时显示BackTop组件(height = 0 不显示按钮)     Number     0
-bottom    组件距离底部的距离                                             Number     30
-right     组件距离右部的距离                                             Number     30
-duration  滚动动画持续时间，单位 毫秒                                     Number     1000
+height    页面滚动高度 >= 该值时显示BackTop组件(height = 0 不显示按钮)      Number     0
+bottom    组件距离底部的距离, 单位 px                                    Number     30
+right     组件距离右部的距离, 单位 px                                    Number     30
+duration  滚动动画持续时间，单位 (ms)毫秒                                 Number     1000
 
 # DewBackTop events
 事件名     说明                                      返回值       默认值
 on-click  点击按钮时触发,页面滚动的距离(scrollTop)      单位 px      无
 
 ```
+## DewDividingLine(分界线)
+```
+  <dew-dividing-line></dew-dividing-line>
+# DewBackTop props
+属性        说明                                                                     类型      默认值
+position    分界线 标题的位置，可选值为 left、right 或 center                           String    center
+direction   分界线 水平还是垂直类型，可选值为 horizontal 或 vertical                     String    horizontal
+type        分界线 的类型, 可选值为 solid, dashed, wavyLine                            String    solid
+color       分界线 的颜色                                                             String    #e8eaec
+margin      分界线 上下的 margin 值, 单位 px, direction 为 vertical 时无效              Number     10
+```
+
 [docs for dew-ui](http://www.dew-ui.com/).
