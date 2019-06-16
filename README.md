@@ -7,10 +7,19 @@ please do not download
 测试版本,
 请不要下载
 
-# 作者注:
-  目前只实现了 基本的 DewButton, DewBackTop 组件,
+# 作者注(Author's note):
+  目前只实现了 基本的 DewButton, DewBackTop 组件.
   组件 不能附带 icon, DewIcon 组件 正在开发中...
-  目前只有我一个人 在开发与维护, 利用的 是 下班之后的时间 在开发, 进度略慢, 开发完成我会在 issue 内 说明
+  目前只有我一个人 在开发与维护, 利用的 是 下班之后的时间 在开发, 进度略慢, 开发完成我会在 issue 内 说明.
+  Currently only the basic DewButton, DewBackTop component is implemented.
+  DewIcon component is under development...
+  At present, I am only developing and maintaining.
+  Utilizing the time after work for development.
+  he progress is slightly slower. I will explain in the issue after the development is completed.
+
+  目前 npm 仓库内还是最原始的代码,只有 一个button和icon组件,这个框架写到 70% 我会 提交到 npm 仓库的.
+  Currently the npm repository is still the most primitive code, with only one button and icon component.
+  When this framework is written to 70%, I will submit it to the npm repository.
 ```
 ## Build Setup
 
