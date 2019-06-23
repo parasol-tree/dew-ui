@@ -63,7 +63,7 @@ disabled               是否禁用按钮                                       
 nativeType             button 原生属性 type, 仅支持三种 [button, submit, reset]                         String       button
 prefixIcon             前缀 icon 同 DewIcon 的 iconCategory
 suffixIcon             后缀 icon 同 DewIcon 的 iconCategory
-iconButton             带 icon 的 button, 同 DewIcon 的 iconCategory               String        ''
+iconButton             带 icon 的 button, 同 DewIcon 的 iconCategory                                   String        ''
 iconSize               同 DewIcon 的 iconSize
 iconUnit               同 DewIcon 的 iconUnit
 iconColor              同 DewIcon 的 iconColor
