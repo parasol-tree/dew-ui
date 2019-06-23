@@ -1,14 +1,19 @@
 <template>
-  <i class="dew-icon"
+  <i ref="refDewIcon"
     :class="iconClassName"
     :style="iconStyles"
+    @click="handleEmitIconClick"
   >
-    123icon
   </i>
 </template>
 
 <script>
-const classNameConstant = 'dew-icon'
+// 前缀 class 名, 写这里方便控制, 前缀 css 属性在 dew-icon.css 内
+const prefixEsClassName = 'dew-icon'
+import {
+  oneOfFn // 判断 参数 是否是 其中之一
+} from '../../../utils/assistFunction.js'
+
 export default {
   name: 'DewIcon',
   props: {
@@ -17,32 +22,66 @@ export default {
       type: String,
       default: ''
     },
-    size: [Number, String],
-    color: String
+    size: {
+      type: [Number, String],
+      default: null
+    },
+    unit: {
+      type: String,
+      default: 'px',
+      // 必须是 其中之一
+      validator (value) {
+        return oneOfFn(value, ['px', 'em', 'rem', 'vh', 'vw'])
+      }
+    },
+    color: {
+      type: String,
+      default: null
+    },
+    backgroundColor: {
+      type: String,
+      default: null
+    }
   },
   computed: {
     iconClassName () {
       return [
         // 可以在这里加 class名 例如 `${classNameConstant}`,
         {
-          [`${classNameConstant}-${this.iconCategory}`]: this.iconCategory !== ''
+          [`${prefixEsClassName}-${this.iconCategory}`]: this.iconCategory !== ''
         }
       ]
     },
     iconStyles () {
-        let styleObj = {}
-        if (this.size) {
-            styleObj['font-size'] = `${this.size}px`
-        }
-        if (this.color) {
-            styleObj.color = this.color
-        }
-        return styleObj
+      let styleObj = {}
+      if (this.size && this.unit) {
+        styleObj['font-size'] = `${this.size}${this.unit}`
+      }
+      if (this.color) {
+        styleObj.color = this.color
+      }
+      if (this.backgroundColor) {
+        styleObj['background-color'] = this.backgroundColor
+      }
+      return styleObj
     }
   },
   mounted () {
-    // console.log(this.iconCategory, 'iconCategory')
+  },
+  methods: {
+    handleEmitIconClick (event) {
+      const params = {
+        iconCategory: this.iconCategory,
+        size: this.size,
+        unit: this.unit,
+        color: this.color,
+        backgroundColor: this.backgroundColor
+      }
+      this.$emit('icon-click', event, params)
+    }
+    //
   }
+  //
 }
 </script>
 

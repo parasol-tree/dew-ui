@@ -4,14 +4,18 @@
     :style="stylesBackTop"
     @click="handleBtnBackTopClick"
   >
-    <slot>
-      <div
-        :class="slotClassName"
-      >
-        <!-- iconfont 还没有制作, 先这么用了 -->
-        <i>返回顶部</i>
-      </div>
-    </slot>
+    <dew-icon
+      v-if="!hasSlot"
+      :iconCategory="iconCategory"
+      :size="iconSize"
+      :unit="iconUnit"
+      :color="iconColor"
+      :backgroundColor="iconBackgroundColor"
+    >
+    </dew-icon>
+    <div v-else>
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -25,6 +29,7 @@ import {
   addListener,
   removeListener
 } from '../../../utils/eventListener.js' // 事件监听器
+import DewIcon from '../../icon/index.js'
 
 export default {
   name: 'DewBackTop',
@@ -53,30 +58,54 @@ export default {
     height: {
       type: Number,
       default: 0
-    }
+    },
+    backgroundColor: {
+      type: Number,
+      default: null
+    },
+    color: {
+      type: String,
+      default: null
+    },
+    iconCategory: {
+      type: String,
+      default: 'huidaodingbu'
+    },
+    iconSize: [Number, String],
+    iconUnit: String,
+    iconColor: String,
+    iconBackgroundColor: String
     //
   },
   computed: {
+    hasSlot() {
+      return !!this.$slots.default
+    },
     classBackTop () {
       return [
         `${prefixEsClassName}`, // dew-back-top
         {
           [`${prefixEsClassName}-show`]: this.isBackTop,
-          'hasSlot': this.$scopedSlots.$hasNormal
+          [`${prefixEsClassName}-noSlot`]: !this.hasSlot,
+          'hasSlot': this.hasSlot
         }
       ]
     },
     stylesBackTop () {
-      return {
-        right: `${this.right}px`,
-        bottom: `${this.bottom}px`,
+      let styleObj = {}
+      styleObj['right'] = `${this.right}px`
+      styleObj['bottom'] = `${this.bottom}px`
+      if (this.backgroundColor) {
+        styleObj['background-color'] = this.backgroundColor
       }
-    },
-    slotClassName () {
-      return `${prefixEsClassName}-noSlot`
+      if (this.color && !this.iconColor) {
+        styleObj['color'] = this.color
+      }
+      return styleObj
     }
     //
   },
+  components: { DewIcon },
   beforeDestroy () {
     // 直接用 window.addEventListener 存在 兼容性问题, 故此不用, 转而用自定义的 事件监听器(监听的 dom 默认值为 window 或者 document)
     removeListener(window, 'scroll', this.isBackTopFn, { passive: true, capture: false })
@@ -129,9 +158,9 @@ export default {
   }
   .dew-back-top-noSlot {
     box-sizing: border-box;
-    padding: 6px;
+    padding: 6px 10px;
     border-radius: 4px;
-    font-size: 12px;
+    font-size: 16px;
     color: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0,.2);
     background-color: rgba(0, 0, 0,.6);

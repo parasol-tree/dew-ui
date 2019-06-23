@@ -8,11 +8,7 @@ please do not download
 请不要下载
 
 # 作者注(Author's note):
-  目前只实现了 基本的 DewButton, DewBackTop 组件.
-  组件 不能附带 icon, DewIcon 组件 正在开发中...
   目前只有我一个人 在开发与维护, 利用的 是 下班之后的时间 在开发, 进度略慢, 开发完成我会在 issue 内 说明.
-  Currently only the basic DewButton, DewBackTop component is implemented.
-  DewIcon component is under development...
   At present, I am only developing and maintaining.
   Utilizing the time after work for development.
   the progress is slightly slower. I will explain in the issue after the development is completed.
@@ -41,12 +37,14 @@ import Vue from 'vue'
 import {
   DewButton,
   DewIcon,
-  DewBackTop
+  DewBackTop,
+  DewDividingLine
 } from 'dew-ui'
 
 Vue.use(DewButton)
 Vue.use(DewIcon)
 Vue.use(DewBackTop)
+Vue.use(DewDividingLine)
 ```
 # API
 ## DewButton(button, 按钮)
@@ -59,38 +57,58 @@ Vue.use(DewBackTop)
     Warning
   </dew-button>
 # DewButton props
-属性          说明                                                                          类型          默认值
-type          按钮类型 [default, primary, dashed, text, info, success, warning, error]        String       default
-disabled      是否禁用按钮                                                                     Boolean      false
-nativeType    button 原生属性 type, 仅支持三种 [button, submit, reset]                          String       button
+属性                   说明                                                                          类型          默认值
+type                   按钮类型 [default, primary, dashed, text, info, success, warning, error]       String       default
+disabled               是否禁用按钮                                                                    Boolean      false
+nativeType             button 原生属性 type, 仅支持三种 [button, submit, reset]                         String       button
+prefixIcon             前缀 icon 同 DewIcon 的 iconCategory
+suffixIcon             后缀 icon 同 DewIcon 的 iconCategory
+iconButton             带 icon 的 button, 同 DewIcon 的 iconCategory               String        ''
+iconSize               同 DewIcon 的 iconSize
+iconUnit               同 DewIcon 的 iconUnit
+iconColor              同 DewIcon 的 iconColor
+iconBackgroundColor    同 DewIcon 的 iconBackgroundColor
 ```
 
 ## DewIcon(icon, 矢量图标)
 ```
-  组件 不能附带 icon, DewIcon 组件 正在开发中...
-  <dew-icon></dew-icon>
+  <dew-icon iconCategory="huidaodingbu"></dew-icon>
+  支持自定义 icon eg: <dew-icon class="iconfont userIconName"></dew-icon>
 # DewIcon props
-属性          说明                                                                            类型              默认值
-color         字体颜色 支持类型 [HEX RGB RGBA HSL HSLA word(eg: color="red",  color="#333")]    String            无
-size          字体大小 (eg: size="23" 相当于设置了 font-size: 23px;)                             Number, String    无
-iconCategory  自定义 class 名                                                                  String            ''
+属性                说明                                                                              类型              默认值
+iconCategory       icon 的 名字, 自定义的 icon 会覆盖 组件自身上的 iconCategory 属性                     String            ''
+size               字体大小 (eg: size="23" 相当于设置了 font-size: 23px;)                              Number, String    null
+unit               字体大小的单位,可选值 ['px', 'em', 'rem', 'vh', 'vw']                               String            px
+color              字体颜色 支持类型 [HEX RGB RGBA HSL HSLA color of EnglishWord(eg: color="red")]     String           null
+backgroundColor    字体的背景色 支持类型 [HEX, RGB, RGBA, HSL, HSLA, color of EnglishWord]             String            null
+
+# DewBackTop events
+事件名       说明            返回值                   默认值
+icon-click  icon 单击时触发  该组件的 props 属性       该组件的 props 属性(以对象的形式返回)
 ```
 
 ## DewBackTop(返回顶部)
 ```
-  DewIcon 组件正在开发中, 所以目前不支持 slot 的 icon 的用法
-  <dew-back-top></<dew-back-top>
+  <dew-back-top iconCategory="huidaodingbu"></<dew-back-top>
   <dew-back-top>返回顶部</<dew-back-top>
+  html,body 设置 css 属性 overflow 时 该组件无效
 # DewBackTop props
-属性      说明                                                          类型      默认值
-height    页面滚动高度 >= 该值时显示BackTop组件(height = 0 不显示按钮)      Number     0
-bottom    组件距离底部的距离, 单位 px                                    Number     30
-right     组件距离右部的距离, 单位 px                                    Number     30
-duration  滚动动画持续时间，单位 (ms)毫秒                                 Number     1000
+属性                  说明                                                                类型      默认值
+bottom                组件距离底部的距离, 单位 px                                           Number     30
+right                 组件距离右部的距离, 单位 px                                           Number     30
+duration              滚动动画持续时间，单位 (ms)毫秒                                        Number     1000
+height                页面滚动高度 >= 该值时显示BackTop组件(height = 0 不显示按钮)             Number     0
+backgroundColor       组件 背景颜色, 同 DewIcon 的 iconColor
+color                 组件 内文字的 颜色 同 DewIcon 的 iconColor(与 iconColor 只生效一个)
+iconCategory          同 DewIcon 的 iconCategory
+iconSize              同 DewIcon 的 iconSize
+iconUnit              同 DewIcon 的 iconUnit
+iconColor             同 DewIcon 的 iconColor
+iconBackgroundColor   同 DewIcon 的 iconBackgroundColor
 
 # DewBackTop events
-事件名     说明                                      返回值       默认值
-on-click  点击按钮时触发,页面滚动的距离(scrollTop)      单位 px      无
+事件名     说明                返回值                               默认值
+on-click  点击按钮时触发        页面滚动的距离(scrollTop)单位 px      无
 
 ```
 ## DewDividingLine(分界线)
