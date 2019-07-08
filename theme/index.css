@@ -1,4 +1,9 @@
 @charset "UTF-8";
+
+:after,
+:before {
+  box-sizing: border-box;
+}
 /*为避免 引入外部文件的 css 导致的 页面闪动, 只引一个 css 文件*/
 @font-face {
   font-family: "dew-icons";

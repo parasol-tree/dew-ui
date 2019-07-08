@@ -119,7 +119,7 @@ export default {
   mounted () {
     if (this.hasSlot && this.direction === VERTICAL) {
       console.warn('组件 DewDividingLine 将不会显示, 当 属性 direction 值 为 vertical 时')
-      console.warn('the component DewDividingLine does not display when the direction is vertical')
+      console.warn('the component of DewDividingLine does not display when the direction is vertical')
     }
     // 横向
     if (this.color !== COLOR) {

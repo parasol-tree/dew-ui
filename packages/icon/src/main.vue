@@ -65,8 +65,7 @@ export default {
       }
       return styleObj
     }
-  },
-  mounted () {
+    //
   },
   methods: {
     handleEmitIconClick (event) {

@@ -122,5 +122,45 @@ type        分界线 的类型, 可选值为 solid, dashed, wavyLine           
 color       分界线 的颜色                                                             String    #e8eaec
 margin      分界线 上下的 margin 值, 单位 px, direction 为 vertical 时无效              Number     10
 ```
+## DewSwitch(开关)
+```
+  <dew-switch></dew-switch>
+# DewSwitch props
+属性                     说明                                                                     类型                         默认值
+value                    指定当前是否选中, 可以使用 v-model 双向数据绑定                              String, Number, Boolean      false
+disabled                 是否禁用开关                                                              Boolean                      false
+activeVal                选中时的值                                                                String, Number, Boolean      true
+inactiveVal              没有选中时的值                                                            String, Number, Boolean       false
+size                     开关的尺寸，可选值为 small、large、default                                 String                       'default'
+activeBackgroundColor    选中时的 开关背景色                                                       String                        null
+inactiveBackgroundColor  取消选中时的 开关背景色                                                    String                        null
+switchBackgroundColor    按钮 的颜色                                                               String                       #fff
+
+# DewBackTop events
+事件名       说明                                返回值                               默认值
+on-change    开关变化时触发，返回当前选中时的值/开关的状态                               true or false
+
+# DewBackTop slot
+名称                说明
+active              自定义显示 开关 打开时的内容
+inactive            自定义显示 开关 关闭时的内容
+
+Vue 2.6.0+
+  <dew-switch>
+    <template v-slot:active>
+      <span>开</span>
+    </template>
+    <template v-slot:inactive>
+      <span>关</span>
+    </template>
+  </dew-switch>
+vue 2.6.0-
+  <dew-switch>
+    <span slot="active">开</span>
+    <span slot="inactive">关</span>
+  </dew-switch>
+
+tips: 两个文字时建议 size 属性值 为 large
+```
 
 [docs for dew-ui](http://www.dew-ui.com/).
