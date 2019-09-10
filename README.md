@@ -72,7 +72,7 @@ iconBackgroundColor    同 DewIcon 的 iconBackgroundColor
 
 ## DewIcon(icon, 矢量图标)
 ```
-  需要在 main.js 内 引入 theme/index.css
+  需要在 main.js 内 引入 index.css
   import '你的 main.js 相对于根的路径/node_modules/dew-ui/theme/index.css'
   <dew-icon iconCategory="huidaodingbu"></dew-icon>
   支持自定义 icon eg: <dew-icon class="iconfont userIconName"></dew-icon>
