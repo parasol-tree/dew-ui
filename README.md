@@ -13,7 +13,7 @@ please do not download
   Utilizing the time after work for development.
   the progress is slightly slower. I will explain in the issue after the development is completed.
 
-  目前 npm 仓库内还是最原始的代码,只有 一个button和icon组件,这个框架写到 70% 我会 提交到 npm 仓库的.
+  目前 npm 仓库内还是最原始的代码,只有 一个 button 组件,这个框架写到 70% 我会 提交到 npm 仓库的.
   Currently the npm repository is still the most primitive code, with only one button and icon component.
   When this framework is written to 70%, I will submit it to the npm repository.
 ```
