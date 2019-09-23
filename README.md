@@ -166,3 +166,4 @@ tips: 两个文字时建议 size 属性值 为 large
 ```
 
 [docs for dew-ui](http://www.dew-ui.com/).
+[example for dew-ui](http://www.dew-ui.com/dew)
