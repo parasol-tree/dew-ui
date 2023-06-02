@@ -1,6 +1,6 @@
 <template>
   <form class="searchForm">
-    <input type="text" class="searchInput" aria-label="搜索" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto">
+    <input type="text" class="searchInput" aria-label="搜索" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" dir="auto" placeholder="暂不提供搜索">
   </form>
 </template>
 
