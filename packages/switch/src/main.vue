@@ -16,14 +16,14 @@
 </template>
 
 <script>
-const prefixEsClassName = 'dew-switch'
-const SMALL = 'small'
-const LARGE = 'large'
-const DEFAULT = 'default'
-
 import {
   oneOfFn // 判断 参数 是否是 其中之一
 } from '../../../utils/assistFunction.js'
+
+const prefixEsClassName = 'dew-switch'
+const SMALL = 'small'
+// const LARGE = 'large'
+// const DEFAULT = 'default'
 
 export default {
   name: 'DewSwitch',
@@ -72,7 +72,7 @@ export default {
       type: String,
       default: null
     },
-    switchBackgroundColor: {
+    switchBtnBg: {
       type: String,
       default: null
     },
@@ -84,23 +84,23 @@ export default {
   },
   computed: {
     // 是否有 slot
-    hasSlot() {
+    hasSlot () {
       return !!this.$slots.active && !!this.$slots.inactive
     },
     switchClassNames () {
       return [
         `${prefixEsClassName}`,
-          {
-            // [`${prefixEsClassName}-active`]: this.currentVal === this.value || this.isActive,
-            [`${prefixEsClassName}-active`]: this.currentVal === this.activeVal, // 兼容 props 属性 value ,显示是否 选中
-            [`${prefixEsClassName}-disabled`]: this.disabled,
-            [`${prefixEsClassName}-${this.size}`]: !!this.size && this.size !== 'default',
-            [`${prefixEsClassName}-loading`]: this.loading
-          }
-        ]
+        {
+          // [`${prefixEsClassName}-active`]: this.currentVal === this.value || this.isActive,
+          [`${prefixEsClassName}-active`]: this.currentVal === this.activeVal, // 兼容 props 属性 value ,显示是否 选中
+          [`${prefixEsClassName}-disabled`]: this.disabled,
+          [`${prefixEsClassName}-${this.size}`]: !!this.size && this.size !== 'default',
+          [`${prefixEsClassName}-loading`]: this.loading
+        }
+      ]
     },
     switchStyles () {
-      let styleObj = {}
+      const styleObj = {}
       if (this.isActive && !!this.activeBackgroundColor) {
         styleObj['background-color'] = this.activeBackgroundColor
         styleObj['border-color'] = this.activeBackgroundColor
@@ -124,14 +124,15 @@ export default {
       if (newVal !== this.activeVal && newVal !== this.inactiveVal) {
         throw new Error("value 的值 应当是 'activeVal' 或者 'inactiveVal' 的值 \n Value should be activeVal or inactiveVal.")
       }
-      console.log(newVal, 'newVal')
+      // console.log(newVal, 'newVal')
       this.currentVal = newVal
     },
-    switchBackgroundColor: {
+    switchBtnBg: {
       immediate: true,
       handler: function (newVal, oldVal) {
+        // eslint-disable-next-line no-extra-boolean-cast
         if (!!newVal) {
-          document.styleSheets[0].insertRule(`.dew-switch:after { background-color: ${this.switchBackgroundColor}!important`, 0)
+          document.styleSheets[0].insertRule(`.dew-switch:after { background-color: ${this.switchBtnBg}!important`, 0)
         }
       }
     },
@@ -249,6 +250,9 @@ export default {
   .dew-switch-disabled {
     cursor: not-allowed;
     opacity: .4;
+  }
+  .dew-switch-disabled::after {
+    cursor: not-allowed;
   }
   /* 插槽 */
   .dew-switch-slot {

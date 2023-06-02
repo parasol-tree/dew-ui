@@ -9,22 +9,20 @@
         'iconButton': !$slots.default && iconButton && !prefixIcon && !suffixIcon
       }
     ]"
+    @click="clickFn"
+    @dblclick="dblclickFn"
   >
     <!-- 只存在 icon -->
     <dew-icon v-if="!$slots.default && iconButton && !prefixIcon && !suffixIcon"
-      :iconCategory="iconButton"
+      :iconName="iconButton"
       :size="iconSize"
-      :unit="iconUnit"
       :color="iconColor"
-      :backgroundColor="iconBackgroundColor"
     ></dew-icon>
     <!-- 存在 前缀 icon -->
     <dew-icon v-if="$slots.default && prefixIcon && !iconButton"
-      :iconCategory="prefixIcon"
+      :iconName="prefixIcon"
       :size="iconSize"
-      :unit="iconUnit"
       :color="iconColor"
-      :backgroundColor="iconBackgroundColor"
     ></dew-icon>
     <!-- 只存在插槽 -->
     <span v-if="$slots.default && !iconButton">
@@ -36,11 +34,9 @@
     </span>
     <!-- 只存在 后缀 icon -->
     <dew-icon v-if="$slots.default && suffixIcon && !iconButton"
-      :iconCategory="suffixIcon"
+      :iconName="suffixIcon"
       :size="iconSize"
-      :unit="iconUnit"
       :color="iconColor"
-      :backgroundColor="iconBackgroundColor"
     ></dew-icon>
   </button>
 </template>
@@ -76,18 +72,24 @@ export default {
       default: null
     },
     iconSize: [Number, String],
-    iconUnit: String,
-    iconColor: String,
-    iconBackgroundColor: String
+    iconColor: String
   },
-  components: { DewIcon }
+  components: { DewIcon },
+  methods: {
+    clickFn () {
+      this.$emit('click')
+    },
+    dblclickFn () {
+      this.$emit('dblclick')
+    }
+  }
 }
 </script>
 
 <style scoped>
   button {
-    margin: 0;
-    padding: 0;
+    /* margin: 0;
+    padding: 0; */
     font-size: inherit;
     font-family: inherit;
     line-height: inherit;
@@ -115,6 +117,10 @@ export default {
     user-select: none;
     /* 让 颜色 的 展示与隐藏有动画效果 */
     transition: color .2s linear, background-color .2s linear,border .2s linear, box-shadow .2s linear;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: bottom;
   }
   /* .dew-btn:not([disabled]):hover {
     text-decoration: none;
@@ -155,6 +161,8 @@ export default {
     border-color: transparent;
     color: #515a6e;
     background-color: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .dew-btn--text:hover {
     border-color: transparent;
@@ -202,25 +210,67 @@ export default {
     background-color: #f16643;
   }
   .iconButton {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     padding: 0;
     font-size: 16px;
     border-radius: 50%;
   }
   /* 是否禁用按钮 */
-  .is-disabled {
+  /* .is-disabled {
     border-color: #dcdee2!important;
     color: #c5c8ce!important;
     background-color: #f7f7f7!important;
     background-image: none!important;
     cursor: not-allowed!important;
-  }
-  .dew-btn.is-disabled.dew-btn--text[disabled] {
+  } */
+  /* .dew-btn.is-disabled.dew-btn--text[disabled] {
     border-color: transparent!important;
     background-color: #fff!important;
-  }
+  } */
   button[type="button"]:disabled:hover {
     text-decoration: none;
+  }
+  .is-disabled.dew-btn--default, .is-disabled.dew-btn--dashed {
+    cursor: not-allowed;
+    color: #c0c4cc;
+    background-color: #fff;
+    border-color: #ebeef5;
+  }
+  .is-disabled.dew-btn--primary {
+    cursor: not-allowed;
+    color: #fff;
+    background-color: #a0cfff;
+    border-color: #a0cfff;
+  }
+  .is-disabled.dew-btn--info {
+    cursor: not-allowed;
+    color: #fff;
+    background-color: #b0e5fe;
+    border-color: #b0e5fe;
+  }
+  .is-disabled.dew-btn--success {
+    cursor: not-allowed;
+    color: #fff;
+    background-color: #87f1bc;
+    border-color: #87f1bc;
+  }
+  .is-disabled.dew-btn--warning {
+    cursor: not-allowed;
+    color: #fff;
+    background-color: #f1d7af;
+    border-color: #f1d7af;
+  }
+  .is-disabled.dew-btn--error {
+    cursor: not-allowed;
+    color: #fff;
+    background-color: #f6ccc1;
+    border-color: #f6ccc1;
+  }
+  .is-disabled.dew-btn--text {
+    cursor: not-allowed;
+    color: #c0c4cc;
+    background-color: transparent;
+    border-color: transparent;
   }
 </style>

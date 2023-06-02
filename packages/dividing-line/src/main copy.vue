@@ -13,6 +13,11 @@
 </template>
 
 <script>
+import {
+  oneOfFn // 判断 参数 是否是 其中之一
+  // getCssStyleFn // 获取非行内元素的样式
+} from '../../../utils/assistFunction.js'
+
 const prefixEsClassName = 'dew-dividing-line' // 前缀 class 名, 写这里方便控制
 const LEFT = 'left'
 const RIGHT = 'right'
@@ -26,11 +31,6 @@ const DASHED = 'dashed'
 const WAVY_LINE = 'wavyLine'
 
 const COLOR = '#e8eaec'
-
-import {
-  oneOfFn, // 判断 参数 是否是 其中之一
-  getCssStyleFn // 获取非行内元素的样式
-} from '../../../utils/assistFunction.js'
 
 export default {
   name: 'DewDividingLine',
@@ -79,7 +79,7 @@ export default {
   },
   computed: {
     // 是否有 slot
-    hasSlot() {
+    hasSlot () {
       // console.log(this.$slots.default, 'this.$slots.default')
       // console.log(!!this.$slots.default, '!!this.$slots.default')
       return !!this.$slots.default
@@ -90,12 +90,12 @@ export default {
         {
           [`${prefixEsClassName}-${this.direction}`]: !this.hasSlot, // 分界线 方向
           [`${prefixEsClassName}-${this.direction}-${this.type}`]: !this.hasSlot, // 分界线 类型
-          [`${prefixEsClassName}-${this.direction}-${this.type}-slot`]: this.hasSlot, // 分界线 类型
+          [`${prefixEsClassName}-${this.direction}-${this.type}-slot`]: this.hasSlot // 分界线 类型
         }
       ]
     },
     styleObjectRefDewDividingLine () {
-      let styleObj = {}
+      const styleObj = {}
       // 只要横向时才设置 分界线的上下 margin
       if (this.direction === HORIZONTAL) {
         styleObj['margin-top'] = `${this.margin}px!important`
@@ -110,7 +110,7 @@ export default {
     //
   },
   beforeDestroy () {
-    if (this.position == CENTER) {
+    if (this.position === CENTER) {
       document.styleSheets[0].deleteRule(0)
       document.styleSheets[0].deleteRule(1)
     }

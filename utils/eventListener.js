@@ -6,17 +6,17 @@ import {
 // addListener
 export const addListener = (function () {
   if (window.addEventListener || document.addEventListener) {
-    return function(element = window || document, event, handler, options = false) {
+    return function (element = window || document, event, handler, options = false) {
       if (element && event && handler) {
-          let optionReal = deepCopyFn(options)
-          if (Object.prototype.toString.call(options) === '[object Object]' && options.hasOwnProperty('passive') && !passiveSupportedFn()) {
-            Object.keys(optionReal).length === 1 ? optionReal = false : delete optionReal.passive
-          }
-          element.addEventListener(event, handler, optionReal)
+        let optionReal = deepCopyFn(options)
+        if (Object.prototype.toString.call(options) === '[object Object]' && Object.prototype.hasOwnProperty.call(options, 'passive') && !passiveSupportedFn()) {
+          Object.keys(optionReal).length === 1 ? optionReal = false : delete optionReal.passive
+        }
+        element.addEventListener(event, handler, optionReal)
       }
     }
   } else {
-    return function(element = window || document, event, handler) {
+    return function (element = window || document, event, handler) {
       if (element && event && handler) {
         element.attachEvent('on' + event, handler)
       }
@@ -24,19 +24,19 @@ export const addListener = (function () {
   }
 })()
 // removeListener
-export const removeListener = (function() {
+export const removeListener = (function () {
   if (window.removeEventListener || document.removeEventListener) {
-    return function(element = window || document, event, handler, options = false) {
+    return function (element = window || document, event, handler, options = false) {
       if (element && event) {
-          let optionReal = deepCopyFn(options)
-          if (Object.prototype.toString.call(options) === '[object Object]' && options.hasOwnProperty('passive') && !passiveSupportedFn()) {
-            Object.keys(optionReal).length === 1 ? optionReal = false : delete optionReal.passive
-          }
-          element.removeEventListener(event, handler, optionReal)
+        let optionReal = deepCopyFn(options)
+        if (Object.prototype.toString.call(options) === '[object Object]' && Object.prototype.hasOwnProperty.call(options, 'passive') && !passiveSupportedFn()) {
+          Object.keys(optionReal).length === 1 ? optionReal = false : delete optionReal.passive
+        }
+        element.removeEventListener(event, handler, optionReal)
       }
     }
   } else {
-    return function(element = window || document, event, handler) {
+    return function (element = window || document, event, handler) {
       if (element && event) {
         element.detachEvent('on' + event, handler)
       }

@@ -4,15 +4,12 @@
     :style="stylesBackTop"
     @click="handleBtnBackTopClick"
   >
-    <dew-icon
-      v-if="!hasSlot"
-      :iconCategory="iconCategory"
+    <DewIcon v-if="!hasSlot"
+      :svgName="svgName"
+      :iconName="iconName"
       :size="iconSize"
-      :unit="iconUnit"
-      :color="iconColor"
-      :backgroundColor="iconBackgroundColor"
-    >
-    </dew-icon>
+      :color="color"
+    />
     <div v-else>
       <slot></slot>
     </div>
@@ -20,8 +17,6 @@
 </template>
 
 <script>
-const prefixEsClassName = 'dew-back-top' // 前缀 class 名, 写这里方便控制
-
 import {
   animationBackTopFn // 返回顶部的动画
 } from '../../../utils/assistFunction.js'
@@ -30,6 +25,8 @@ import {
   removeListener
 } from '../../../utils/eventListener.js' // 事件监听器
 import DewIcon from '../../icon/index.js'
+
+const prefixEsClassName = 'dew-back-top' // 前缀 class 名, 写这里方便控制
 
 export default {
   name: 'DewBackTop',
@@ -40,45 +37,21 @@ export default {
   },
   props: {
     // 按钮距离底部的距离, 默认 30px
-    bottom: {
-      type: Number,
-      default: 30
-    },
+    bottom: { type: [Number, String], default: 30 },
     // 按钮距离右侧的距离, 默认 30px
-    right: {
-      type: Number,
-      default: 30
-    },
+    right: { type: Number, default: 30 },
     // 动画持续时间
-    duration: {
-      type: Number,
-      default: 1000
-    },
+    duration: { type: Number, default: 1000 },
     // 距离顶部多高时显示 返回顶部的 按钮, 默认 400 px
-    height: {
-      type: Number,
-      default: 0
-    },
-    backgroundColor: {
-      type: Number,
-      default: null
-    },
-    color: {
-      type: String,
-      default: null
-    },
-    iconCategory: {
-      type: String,
-      default: 'huidaodingbu'
-    },
-    iconSize: [Number, String],
-    iconUnit: String,
-    iconColor: String,
-    iconBackgroundColor: String
-    //
+    height: { type: Number, default: 0 },
+    backgroundColor: { type: String, default: null },
+    color: { type: String, default: null },
+    iconName: { type: String, default: 'to-top' },
+    svgName: { type: String, default: '' },
+    iconSize: [Number, String]
   },
   computed: {
-    hasSlot() {
+    hasSlot () {
       return !!this.$slots.default
     },
     classBackTop () {
@@ -87,19 +60,19 @@ export default {
         {
           [`${prefixEsClassName}-show`]: this.isBackTop,
           [`${prefixEsClassName}-noSlot`]: !this.hasSlot,
-          'hasSlot': this.hasSlot
+          hasSlot: this.hasSlot
         }
       ]
     },
     stylesBackTop () {
-      let styleObj = {}
-      styleObj['right'] = `${this.right}px`
-      styleObj['bottom'] = `${this.bottom}px`
+      const styleObj = {}
+      styleObj.right = `${this.right}px`
+      styleObj.bottom = `${this.bottom}px`
       if (this.backgroundColor) {
         styleObj['background-color'] = this.backgroundColor
       }
-      if (this.color && !this.iconColor) {
-        styleObj['color'] = this.color
+      if (this.color) {
+        styleObj.color = this.color
       }
       return styleObj
     }
@@ -132,7 +105,7 @@ export default {
       const scrollTop = document.documentElement.scrollTop || document.body.scrollTop
       animationBackTopFn(window, scrollTop, 0, this.duration)
       this.$emit('on-click', scrollTop) // 返回一个 click 事件, 用于 填写 自定义 的 代码
-    },
+    }
     //
   }
   //
@@ -140,11 +113,9 @@ export default {
 </script>
 
 <style scoped>
-  i {
-    margin: 0;
-    padding: 0;
-    font-style: normal;
-  }
+.dewbackTopContainer {
+  cursor: pointer;
+}
   .dew-back-top {
     position: fixed;
     /* right 和 bottom 的值 由 props 的 right 和 bottom 决定 */
