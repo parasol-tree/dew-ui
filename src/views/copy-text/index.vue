@@ -25,7 +25,7 @@
       },
       methods: {
         copyFn () {
-          this.$_copyTextFn('卧槽泥马勒戈壁')
+          this.$_copyTextFn(this.text1)
             .then(res =&lt; {
               console.log('copyFn res ---&lt;', res)
             })
