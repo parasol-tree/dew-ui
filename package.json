@@ -1,6 +1,6 @@
 {
   "name": "dew-ui",
-  "version": "1.0.3.1",
+  "version": "1.0.4-beta-1",
   "description": "A high quality UI components Library with Vue.js",
   "main": "./index.js",
   "scripts": {
