@@ -3,6 +3,12 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import store from '../store'
 
+const originalPush = VueRouter.prototype.push
+
+VueRouter.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -88,7 +94,39 @@ const router = new VueRouter({
   // mode: 'history',
   // base: process.env.BASE_URL,
   base: process.env.NODE_ENV === 'production' ? '/dew-ui/' : '/',
-  routes
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    // console.log('to --->', to)
+    // console.log('savedPosition --->', savedPosition)
+
+    if (savedPosition) {
+      return savedPosition
+    } else if (to.hash) {
+      return {
+        selector: to.hash,
+        behavior: 'smooth'
+      }
+    } else {
+      return { x: 0, y: 0 }
+    }
+
+    // return new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     console.log('to --->', to)
+    //     console.log('savedPosition --->', savedPosition)
+    //     if (savedPosition) {
+    //       resolve(savedPosition)
+    //     } else if (to.hash) {
+    //       resolve({
+    //         selector: to.hash,
+    //         behavior: 'smooth'
+    //       })
+    //     } else {
+    //       resolve({ x: 0, y: 0 })
+    //     }
+    //   }, 500)
+    // })
+  }
 })
 router.beforeEach((to, from, next) => {
   store.commit('updateSideBarMenuItem', to.name)

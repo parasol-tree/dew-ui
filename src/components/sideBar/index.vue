@@ -17,14 +17,23 @@
       <li class="menuItem">
         <h3 class="title">组件</h3>
         <ul class="subMenu">
-          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'button' }" @click="currentMenuFn('button')"><router-link to="/button">按钮（button）</router-link></li>
+          <!-- <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'button' }" @click="currentMenuFn('button')"><router-link to="/button">按钮（button）</router-link></li>
           <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'icon' }" @click="currentMenuFn('icon')"><router-link to="/icon">图标（icon）</router-link></li>
           <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'back-top' }" @click="currentMenuFn('back-top')"><router-link to="/back-top">返回顶部（back-top）</router-link></li>
           <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'dividing-line' }" @click="currentMenuFn('dividing-line')"><router-link to="/dividing-line">分界线（dividing-line）</router-link></li>
           <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'switch' }" @click="currentMenuFn('switch')"><router-link to="/switch">开关（switch）</router-link></li>
           <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'progress' }" @click="currentMenuFn('progress')"><router-link to="/progress">进度条（progress）</router-link></li>
           <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'count-move' }" @click="currentMenuFn('count-move')"><router-link to="/count-move">数字滚动（count-move）</router-link></li>
-          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'copy-text' }" @click="currentMenuFn('copy-text')"><router-link to="/copy-text">复制到剪贴板（copy-text）</router-link></li>
+          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'copy-text' }" @click="currentMenuFn('copy-text')"><router-link to="/copy-text">复制到剪贴板（copy-text）</router-link></li> -->
+
+          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'button' }" @click="currentMenuFn('button')">按钮（button）</li>
+          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'icon' }" @click="currentMenuFn('icon')">图标（icon）</li>
+          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'back-top' }" @click="currentMenuFn('back-top')">返回顶部（back-top）</li>
+          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'dividing-line' }" @click="currentMenuFn('dividing-line')">分界线（dividing-line）</li>
+          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'switch' }" @click="currentMenuFn('switch')">开关（switch）</li>
+          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'progress' }" @click="currentMenuFn('progress')">进度条（progress）</li>
+          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'count-move' }" @click="currentMenuFn('count-move')">数字滚动（count-move）</li>
+          <li class="subMenuItem" :class="{ 'menuitemActive': currentMenu === 'copy-text' }" @click="currentMenuFn('copy-text')">复制到剪贴板（copy-text）</li>
         </ul>
       </li>
     </ul>
@@ -55,6 +64,9 @@ export default {
       console.log(this.$route)
       // this.currentMenu = value
       this.$store.commit('updateSideBarMenuItem', value)
+      this.$router.push({
+        path: '/' + value
+      })
     }
   }
 }
@@ -84,6 +96,10 @@ export default {
       margin-top .5em
 
 .menuitemActive a
+  color #2d8cf0
+  font-weight 500
+
+.menuitemActive
   color #2d8cf0
   font-weight 500
 </style>
