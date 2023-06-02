@@ -9,7 +9,8 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    redirect: '/install'
   },
   {
     path: '/log',
@@ -85,7 +86,8 @@ const routes = [
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
+  base: process.env.NODE_ENV === 'production' ? '/dew-ui/' : '/',
   routes
 })
 router.beforeEach((to, from, next) => {
