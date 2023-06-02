@@ -10,8 +10,8 @@
 <pre class="pre" v-show="isShow1">
 <code class="code">
   &lt;DewProgress :percent="25" /&gt;
-  &lt;DewProgress :percent="25" :percent="45" progressColor="#2d8cf0" /&gt;
-  &lt;DewProgress :percent="25" :percent="75" progressColor="#ed4014" /&gt;
+  &lt;DewProgress :percent="45" progressColor="#2d8cf0" /&gt;
+  &lt;DewProgress :percent="75" progressColor="#ed4014" /&gt;
 </code>
 </pre>
       <ToogleCode @emit-toogleCode="onToogleCodeFn1"/>
