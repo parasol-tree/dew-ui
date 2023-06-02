@@ -1,43 +1,35 @@
 {
-  "name": "dew-ui",
-  "version": "1.0.2",
-  "description": "A high quality UI components Library with Vue.js",
-  "main": "./index.js",
+  "name": "sdsdd",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/parasol-tree/dew-ui.git"
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^2.6.11",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0",
+    "vuex-persistedstate": "^4.1.0"
   },
-  "keywords": [
-    "dew-ui",
-    "vue",
-    "vue.js",
-    "component",
-    "components",
-    "ui",
-    "dew"
-  ],
-  "author": {
-    "name": "parasol-tree",
-    "email" : "shilijingtian@outlook.com"
-  },
-  "license": "MIT",
-  "browserslist": [
-    "last 3 Chrome versions",
-    "last 3 Firefox versions",
-    "Safari >= 10",
-    "Explorer >= 11",
-    "Edge >= 12",
-    "iOS >= 10",
-    "Android >= 6"
-  ],
-  "peerDependencies": {
-    "vue": "^2.5.2"
-  },
-  "bugs": {
-    "url": "https://github.com/parasol-tree/dew-ui/issues"
-  },
-  "homepage": "https://github.com/parasol-tree/dew-ui#readme"
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.15",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "@vue/cli-plugin-router": "~4.5.15",
+    "@vue/cli-plugin-vuex": "~4.5.15",
+    "@vue/cli-service": "~4.5.15",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.6.11"
+  }
 }

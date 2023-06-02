@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #304455;
+  background-color: #fff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent; /* For some Androids，4.0下面 */  
+}
+
+a {
+  color: #304455;
+  text-decoration: none;
+}
+
+.link {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+ul, li, ol {
+  list-style: none;
+}
+
+.pre {
+  margin-top: 10px;
+}
+.code {
+  display: block;
+  overflow-x: auto;
+  line-height: 1.8;
+  font-family: Menlo,Monaco,Consolas,Courier,monospace;
+  font-size: 12px;
+  padding: 10px 10px 10px;
+  background-color: #fafafa;
+  border: 1px solid #eaeefb;
+  border-radius: 4px;
+  -webkit-font-smoothing: auto;
+}
+
+.baseCard {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 24px 10px 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+}
+
+.dew-btn {
+  margin-bottom: 10px;
+}
+.dew-btn + .dew-btn {
+  margin-left: 10px;
+}
+.hintText {
+  font-size: 14px;
+  padding-left: 10px;
+  color: #5e6d82;
+  line-height: 1.5em;
+}
+
+.table {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-color: #ebebeb;
+  border-collapse: collapse;
+}
+tr:hover {
+  background-color: #B6D3F7;
+}
+th {
+  background: #f7f7f7;
+  white-space: nowrap;
+  color: #5c6b77;
+  font-weight: 600;
+}
+td {
+  text-align: center;
+}
+th, td {
+  padding: 8px;
+}
