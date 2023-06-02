@@ -49,7 +49,7 @@ export default {
 
 <style lang="stylus">
 .App
-  padding-top 60px
+  padding-top 61px
   .content
     position relative
     padding 35px 0
