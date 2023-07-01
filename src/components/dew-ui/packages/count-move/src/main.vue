@@ -1,7 +1,5 @@
 <template>
-  <span class="dew-count-move-com" :style="{ 'font-family': fontFamily }">
-    {{ displayValue }}
-  </span>
+  <span class="dew-count-move-com" :style="{ 'font-family': fontFamily }">{{ displayValue }}</span>
 </template>
 
 <script>

@@ -7,8 +7,8 @@
       <DewProgress class="dewProgress" :percent="25" />
       <DewProgress class="dewProgress" :percent="45" progressColor="#2d8cf0" />
       <DewProgress class="dewProgress" :percent="75" progressColor="#ed4014" />
-<pre class="pre" v-show="isShow1">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow1">
+<code class="code html">
   &lt;DewProgress :percent="25" /&gt;
   &lt;DewProgress :percent="45" progressColor="#2d8cf0" /&gt;
   &lt;DewProgress :percent="75" progressColor="#ed4014" /&gt;
@@ -27,8 +27,8 @@
       <p class="hintText" style="margin: 10px 0;text-align: right;">百分比在右侧</p>
       <DewProgress class="dewProgress" :percent="70" percentPosition="right" />
       <DewProgress class="dewProgress" :percent="70" percentPosition="right" :percentInside="true" />
-<pre class="pre" v-show="isShow2">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow2">
+<code class="code html">
   &lt;DewProgress :percent="25" percentPosition="left" /&gt;
   &lt;DewProgress :percent="25" percentPosition="left" :percentInside="true" /&gt;
   &lt;DewProgress :percent="100" percentPosition="center" /&gt;
@@ -44,8 +44,8 @@
       <DewProgress class="dewProgress" :percent="percent" percentPosition="left" /><br>
       <DewButton type="primary" prefixIcon="add" @click="addFn">增加</DewButton>
       <DewButton type="primary" prefixIcon="minus" @click="minusFn">减少</DewButton>
-<pre class="pre" v-show="isShow3">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow3">
+<code class="code html">
   &lt;template&gt;
     &lt;DewProgress :percent="percent" percentPosition="left" /&gt;
     &lt;DewButton type="primary" prefixIcon="add" @click="addFn"&gt;增加&lt;/DewButton&gt;
@@ -89,8 +89,8 @@
       <DewProgress isStriped isStripeMove :percent="73"/>
       <p class="hintText" style="margin: 10px 0;">自定义条纹样式</p>
       <DewProgress isStriped isStripeMove stripeWidth="20px" stripeColor="#BD2D30" stripeAnimationTime="1s" :percent="73"/>
-<pre class="pre" v-show="isShow4">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow4">
+<code class="code html">
   &lt;DewProgress isStriped :percent="73"/&gt;
   &lt;DewProgress isStriped isStripeMove :percent="73"/&gt;
   &lt;DewProgress isStriped isStripeMove stripeWidth="20px" stripeColor="#BD2D30" :percent="73"/&gt;
@@ -107,8 +107,8 @@
       <DewProgress isStriped isStripeMove :percent="73"/>
       <p class="hintText" style="margin: 10px 0;">自定义条纹样式</p>
       <DewProgress isStriped isStripeMove stripeWidth="20px" stripeColor="#BD2D30" stripeAnimationTime="1s" :percent="73"/>
-<pre class="pre" v-show="isShow5">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow5">
+<code class="code html">
   &lt;DewProgress isStriped :percent="73"/&gt;
   &lt;DewProgress isStriped isStripeMove :percent="73"/&gt;
   &lt;DewProgress isStriped isStripeMove stripeWidth="20px" stripeColor="#BD2D30" :percent="73"/&gt;
@@ -120,8 +120,8 @@
     <h4>自定义波纹动画</h4>
     <div class="baseCard">
       <DewProgress isStriped :percent="73" customizeStripeClass="myStripe" />
-<pre class="pre" v-show="isShow6">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow6">
+<code class="code html">
   &lt;template&gt;
     &lt;DewProgress isStriped :percent="73" customizeStripeClass="myStripe" /&gt;
   &lt;/template&gt;

@@ -19,8 +19,8 @@
         <DewButton type="primary" suffixIcon="edit">编辑</DewButton>
         <DewButton type="error" iconButton="delete"></DewButton>
       </div>
-<pre class="pre" v-show="isShow1">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow1">
+<code class="code html" >
   &lt;DewButton&gt;默认按钮&lt;/DewButton&gt;
   &lt;DewButton type="primary"&gt;primary&lt;/DewButton&gt;
   &lt;DewButton type="dashed"&gt;dashed&lt;/DewButton&gt;
@@ -54,8 +54,8 @@
         <DewButton type="primary" suffixIcon="edit" disabled>编辑</DewButton>
         <DewButton type="error" iconButton="delete" disabled></DewButton>
       </div>
-<pre class="pre" v-show="isShow2">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow2">
+<code class="code html">
   &lt;DewButton&gt;默认按钮&lt;/DewButton&gt;
   &lt;DewButton type="primary" disabled&gt;primary&lt;/DewButton&gt;
   &lt;DewButton type="dashed" disabled&gt;dashed&lt;/DewButton&gt;
@@ -77,8 +77,8 @@
     <div class="baseCard">
       <DewButton type="text">text文本</DewButton>
       <DewButton type="text" disabled>text文本</DewButton>
-<pre class="pre" v-show="isShow3">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow3">
+<code class="code html">
   &lt;DewButton type="text"&gt;text文本&lt;/DewButton&gt;
   &lt;DewButton type="text" disabled&gt;text文本&lt;/DewButton&gt;
 </code>
@@ -230,6 +230,9 @@ export default {
       isShow2: false,
       isShow3: false
     }
+  },
+  mounted () {
+    // window.hljs.highlightAll()
   },
   methods: {
     onToogleCodeFn1 () {

@@ -7,8 +7,8 @@
     <div class="baseCard">
       <strong>向下滚动页面，右下角的按钮为默认效果。</strong>
       <DewBackTop />
-<pre class="pre" v-show="isShow1">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow1">
+<code class="code html">
   &lt;DewBackTop /&gt;
 </code>
 </pre>
@@ -19,12 +19,12 @@
     <div class="baseCard">
       <p>背景色为 blue 的 DewBackTop 距离页面底部 100px</p>
       <p>color 为 blue  的 DewBackTop 距离页面底部 100px, 右边100px</p>
-      <DewBackTop bottom="100" backgroundColor="blue" />
-      <DewBackTop bottom="100" right="100" color="blue">返回顶部</DewBackTop>
-<pre class="pre" v-show="isShow2">
-<code class="code">
-  &lt;DewBackTop  bottom="100" color="skyblue" /&gt;
-  &lt;DewBackTop color="red"&gt;返回顶部&lt;/DewBackTop&gt;
+      <DewBackTop :bottom="100" backgroundColor="blue" />
+      <DewBackTop :bottom="100" :right="100" color="blue">返回顶部</DewBackTop>
+<pre class="pre" v-highlightjs v-show="isShow2">
+<code class="code html">
+  &lt;DewBackTop :bottom="100" backgroundColor="blue" /&gt;
+  &lt;DewBackTop :bottom="100" :right="100" color="blue"&gt;返回顶部&lt;/DewBackTop&gt;
 </code>
 </pre>
       <ToogleCode @emit-toogleCode="onToogleCodeFn2"/>

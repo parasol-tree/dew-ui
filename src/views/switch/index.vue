@@ -5,8 +5,8 @@
     <h4>基础用法</h4>
     <div class="baseCard">
       <DewSwitch v-model="switchVal1" @on-change="changeFn" /> <span>开关状态{{ switchVal1 }}</span>
-<pre class="pre" v-show="isShow1">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow1">
+<code class="code html">
   &lt;template&gt;
     &lt;DewSwitch v-model=&quot;switchVal1&quot; @on-change=&quot;changeFn&quot; /&gt; &lt;span&gt;开关状态&lcub;&lcub;switchVal1&rcub; &rcub;&lt;/span&gt;
   &lt;/template&gt;
@@ -33,8 +33,8 @@
     <div class="baseCard">
       <DewSwitch disabled style="margin-right: 10px;" />
       <DewSwitch v-model="switchVal2" :disabled="true" />
-<pre class="pre" v-show="isShow2">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow2">
+<code class="code html">
   &lt;template&gt;
     &lt;DewSwitch disabled /&gt;
     &lt;DewSwitch v-model=&quot;switchVal2&quot; :disabled=&quot;true&quot; /&gt;
@@ -72,8 +72,8 @@
           <span>关了</span>
         </template>
       </DewSwitch>
-<pre class="pre" v-show="isShow3">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow3">
+<code class="code html">
   &lt;template&gt;
     &lt;DewSwitch&gt;
       &lt;template v-slot:active&gt;
@@ -103,8 +103,8 @@
       <DewSwitch activeBackgroundColor="red" inactiveBackgroundColor="blue" style="margin-right: 10px;" />
       <p class="hintText" style="margin: 10px 0;">选中的值，未选中的值。</p>
       <DewSwitch activeVal="打开了" inactiveVal="关闭了" v-model="switchVal3" />选中的值/未选中的值:<span style="color: red;">{{ switchVal3 }}</span>
-<pre class="pre" v-show="isShow4">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow4">
+<code class="code html">
   &lt;template&gt;
     &lt;DewSwitch activeBackgroundColor="red" inactiveBackgroundColor="blue" /&gt;
     &lt;DewSwitch activeVal="打开了" inactiveVal="关闭了" v-model="switchVal3" /&gt;
@@ -130,8 +130,8 @@
       <DewSwitch :loading="isLoading" v-model="switchVal4" size="large" style="margin-right: 10px;" />
       <DewSwitch loading style="margin-right: 10px;" />
       <DewSwitch :loading="isLoading" v-model="switchVal4" size="small" />
-<pre class="pre" v-show="isShow5">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow5">
+<code class="code html">
   &lt;template&gt;
     &lt;DewSwitch :loading="isLoading" v-model="switchVal4" size="large" /&gt;
     &lt;DewSwitch loading /&gt;

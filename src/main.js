@@ -5,6 +5,9 @@ import store from './store'
 
 import '@/assets/css/reset.css'
 import '@/components/dew-ui/theme/font/dew-icons.css'
+import 'highlight.js/styles/monokai-sublime.css'
+
+import VueHighlightJS from 'vue-highlightjs'
 
 import {
   DewButton,
@@ -17,6 +20,8 @@ import {
   DewCopyText
 } from '@/components/dew-ui/index.js'
 import ToogleCode from '@/components/toogleCode/index.vue'
+
+Vue.use(VueHighlightJS)
 
 Vue.use(DewButton)
 Vue.use(DewIcon)

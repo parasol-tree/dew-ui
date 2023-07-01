@@ -37,7 +37,7 @@ export default {
   },
   props: {
     // 按钮距离底部的距离, 默认 30px
-    bottom: { type: [Number, String], default: 30 },
+    bottom: { type: Number, default: 30 },
     // 按钮距离右侧的距离, 默认 30px
     right: { type: Number, default: 30 },
     // 动画持续时间

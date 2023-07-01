@@ -6,8 +6,8 @@
     <div class="baseCard">
       <textarea cols="30" rows="4" v-model="text1"></textarea>
       <DewButton type="primary" style="margin-left: 10px;" @click="copyFn">复制</DewButton>
-<pre class="pre" v-show="isShow1">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow1">
+<code class="code html">
   &lt;template&gt;
     &lt;textarea cols="30" rows="4" v-model="text1"&gt;&lt;/textarea&gt;
     &lt;DewButton type="primary" @click="copyFn"&gt;复制&lt;/DewButton&gt;
@@ -26,11 +26,11 @@
       methods: {
         copyFn () {
           this.$_copyTextFn(this.text1)
-            .then(res =&lt; {
-              console.log('copyFn res ---&lt;', res)
+            .then(res =&gt; {
+              console.log('copyFn res ---&gt;', res)
             })
-            .catch(err =&lt; {
-              console.log('copyFn err ---&lt;', err)
+            .catch(err =&gt; {
+              console.log('copyFn err ---&gt;', err)
             })
         }
       }

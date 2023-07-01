@@ -11,8 +11,8 @@
       <p>由硬件系统和软件系统所组成，没有安装任何软件的计算机称为裸机。可分为超级计算机、工业控制计算机、网络计算机、个人计算机、嵌入式计算机五类，较先进的计算机有生物计算机、光子计算机、量子计算机等。</p>
       <DewDividingLine waveType="dashed" />
       <DewDividingLine>默认为水平分割线，也可在中间加入文字</DewDividingLine>
-<pre class="pre" v-show="isShow1">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow1">
+<code class="code html">
   &lt;p&gt;计算机（computer）俗称电脑，是现代一种用于高速计算的电子计算机器，可以进行数值计算，又可以进行逻辑计算，还具有存储记忆功能。是能够按照程序运行，自动、高速处理海量数据的现代化智能电子设备。&lt;/p&gt;
   &lt;DewDividingLine /&gt;
   &lt;p&gt;由硬件系统和软件系统所组成，没有安装任何软件的计算机称为裸机。可分为超级计算机、工业控制计算机、网络计算机、个人计算机、嵌入式计算机五类，较先进的计算机有生物计算机、光子计算机、量子计算机等。&lt;/p&gt;
@@ -28,8 +28,8 @@
     <h4>垂直的分割线</h4>
     <div class="baseCard">
       垂直<DewDividingLine direction="vertical" color="red" />的<DewDividingLine direction="vertical" color="blue" />分割线
-<pre class="pre" v-show="isShow2">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow2">
+<code class="code html">
   垂直&lt;DewDividingLine direction="vertical" color="red" /&gt;的&lt;DewDividingLine direction="vertical" color="blue" /&gt;分割线
 </code>
 </pre>
@@ -44,8 +44,8 @@
       <p>由硬件系统和软件系统所组成，没有安装任何软件的计算机称为裸机。可分为超级计算机、工业控制计算机、网络计算机、个人计算机、嵌入式计算机五类，较先进的计算机有生物计算机、光子计算机、量子计算机等。</p>
       <DewDividingLine>一个标题</DewDividingLine>
       <p>由硬件系统和软件系统所组成，没有安装任何软件的计算机称为裸机。可分为超级计算机、工业控制计算机、网络计算机、个人计算机、嵌入式计算机五类，较先进的计算机有生物计算机、光子计算机、量子计算机等。</p>
-<pre class="pre" v-show="isShow3">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow3">
+<code class="code html">
   &lt;DewDividingLine position="left"&gt;一个标题&lt;/DewDividingLine&gt;
   &lt;p&gt;计算机（computer）俗称电脑，是现代一种用于高速计算的电子计算机器，可以进行数值计算，又可以进行逻辑计算，还具有存储记忆功能。是能够按照程序运行，自动、高速处理海量数据的现代化智能电子设备。&lt;/p&gt;
   &lt;DewDividingLine position="right"&gt;一个标题&lt;/DewDividingLine&gt;

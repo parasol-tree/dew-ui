@@ -5,8 +5,8 @@
     <p class="hintText">将一个数字以动画的形式动态渐变到指定值的组件</p>
     <div class="baseCard">
       <DewCountUp endValue="123456" separator="," /><br><br>
-<pre class="pre" v-show="isShow1">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow1">
+<code class="code html">
   &lt;DewCountUp endValue="200" /&gt;
 </code>
 </pre>
@@ -17,8 +17,8 @@
     <p class="hintText">需要搭配 属性 decimalCount 显示小数</p>
     <div class="baseCard">
       <DewCountUp endValue="200.22" :decimalCount="2" />
-<pre class="pre" v-show="isShow2">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow2">
+<code class="code html">
   &lt;DewCountUp endValue="200.22" :decimalCount="2" /&gt;
 </code>
 </pre>
@@ -32,8 +32,8 @@
       <DewButton type="primary" @click="startFn">开始</DewButton>
       <DewButton type="primary" @click="pauseOrGoOnFn">暂停/继续</DewButton>
       <DewButton type="primary" @click="resetFn">重置</DewButton>
-<pre class="pre" v-show="isShow3">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow3">
+<code class="code html">
   &lt;template&gt;
     &lt;DewCountUp ref="refDewCountUp" endValue="500" :autoplay="false" /&gt;
     &lt;DewButton type="primary" @click="startFn"&gt;开始&lt;/DewButton&gt;
@@ -64,12 +64,12 @@
     <p class="hintText">分隔符 每隔三位数字显示的字符串，类似金额的分割(￥99,142.8765中的 ',')</p>
     <div class="baseCard">
       &yen;<DewCountUp endValue="99142.8765" separator="," />
-<pre class="pre" v-show="isShow1">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow4">
+<code class="code html">
   &yen;&lt;DewCountUp endValue="99142.8765" separator="," /&gt;
 </code>
 </pre>
-      <ToogleCode @emit-toogleCode="onToogleCodeFn1"/>
+      <ToogleCode @emit-toogleCode="onToogleCodeFn4"/>
     </div>
 
     <h4>DewCountUp props</h4>

@@ -12,8 +12,8 @@
       <DewButton type="error" suffixIcon="delete">删除</DewButton>
       <DewButton type="primary" prefixIcon="search">搜索</DewButton>
       <DewButton type="primary" iconButton="send"></DewButton>
-<pre class="pre" v-show="isShow1">
-<code class="code">
+<pre class="pre" v-highlightjs v-show="isShow1">
+<code class="code html">
   删除&lt;DewIcon iconName="delete" /&gt;
   code&lt;DewIcon svgName="delete" /&gt;
   也可以直接通过设置类名为 dew-icon-iconName 来使用
